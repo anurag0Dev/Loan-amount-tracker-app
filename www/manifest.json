@@ -1,6 +1,6 @@
 {
-  "name": "Loan Tracker",
-  "short_name": "LoanTracker",
+  "name": "PaySum Note",
+  "short_name": "paySum",
   "start_url": "index.html",
   "display": "fullscreen",
   "background_color": "#ffffff",
@@ -8,7 +8,7 @@
   "icons": [
     {
       "src": "icon.png",
-      "sizes": "192x192",
+      "sizes": "192*192",
       "type": "image/png"
     }
   ]
