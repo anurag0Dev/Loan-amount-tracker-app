@@ -1,0 +1,8 @@
+{
+  "appId": "com.loanpaymenttracker.app",
+  "appName": "Personal App",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
+}

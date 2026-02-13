@@ -1,0 +1,31 @@
+{
+  "name": "loan-payment-tracker",
+  "version": "1.0.0",
+  "description": "Mobile-friendly Loan Payment Tracker with Capacitor for Android",
+  "capacitor": {
+    "disabled": false
+  },
+  "scripts": {
+    "build": "echo 'No build step – use www/ as-is'",
+    "cap:init": "npx cap init",
+    "cap:add:android": "npx cap add android",
+    "cap:sync": "npx cap sync",
+    "cap:open:android": "npx cap open android"
+  },
+  "keywords": [
+    "loan",
+    "payment",
+    "tracker",
+    "capacitor"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@capacitor/android": "^8.1.0",
+    "@capacitor/cli": "^8.1.0",
+    "@capacitor/core": "^8.1.0"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5"
+  }
+}

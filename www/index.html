@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#6F8CE6" />
+  <title>Personal App - Loan Payment Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <header class="header">
+    <h1 class="header-title">Personal App</h1>
+    <button type="button" class="btn-icon btn-menu" id="menuBtn" aria-label="Menu">
+      <span class="hamburger"></span>
+    </button>
+  </header>
+
+  <nav class="dropdown" id="dropdown" aria-hidden="true">
+    <button type="button" class="dropdown-item" id="navAdd">Add</button>
+    <button type="button" class="dropdown-item" id="navAbout">About</button>
+    <button type="button" class="dropdown-item dropdown-item-danger" id="navDeleteAll">Delete All</button>
+  </nav>
+
+  <main class="main">
+    <section class="summary-card">
+      <div class="summary-block">
+        <span class="summary-label">Total Paid</span>
+        <span class="summary-value" id="totalPaid">0</span>
+      </div>
+      <div class="summary-block">
+        <span class="summary-label">Total Month</span>
+        <span class="summary-value" id="totalMonth">0</span>
+      </div>
+    </section>
+
+    <h2 class="section-title">Payments</h2>
+    <ul class="payment-list" id="paymentList" aria-label="Payment list">
+      <!-- Payment cards injected by JS: checkbox, index, amount, date, edit, delete -->
+    </ul>
+  </main>
+
+  <section class="sheet sheet-add" id="addSheet" aria-hidden="true">
+    <div class="sheet-backdrop" id="addSheetBackdrop"></div>
+    <div class="sheet-panel">
+      <h2 class="sheet-title">Add loan Amount</h2>
+      <form class="form-add" id="formAdd">
+        <input type="number" class="input" id="inputAmount" placeholder="Loan amount" min="0" step="0.01" required />
+        <label class="input-row input-row-date" for="inputDateNative">
+          <input type="text" class="input input-date" id="inputDate" placeholder="01/01/2026" readonly required />
+          <span class="btn-icon btn-calendar" id="datePickerBtn" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          </span>
+          <input type="date" class="input-date-native" id="inputDateNative" aria-label="Pick date" />
+        </label>
+        <button type="submit" class="btn-primary">ADD</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="sheet sheet-edit" id="editSheet" aria-hidden="true">
+    <div class="sheet-backdrop" id="editSheetBackdrop"></div>
+    <div class="sheet-panel">
+      <h2 class="sheet-title">Edit payment</h2>
+      <form class="form-add" id="formEdit">
+        <input type="hidden" id="editId" />
+        <input type="number" class="input" id="editAmount" placeholder="Loan amount" min="0" step="0.01" required />
+        <label class="input-row input-row-date" for="editDateNative">
+          <input type="text" class="input input-date" id="editDate" placeholder="01/01/2026" readonly required />
+          <span class="btn-icon btn-calendar" id="editDatePickerBtn" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          </span>
+          <input type="date" class="input-date-native" id="editDateNative" aria-label="Pick date" />
+        </label>
+        <button type="submit" class="btn-primary">Save</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="modal" id="aboutModal" aria-hidden="true">
+    <div class="modal-backdrop" id="aboutModalBackdrop"></div>
+    <div class="modal-content">
+      <h2 class="modal-title">About</h2>
+      <p>Loan Payment Tracker – track amounts and dates, mark payments as paid, and see totals. Data is stored on your device.</p>
+      <button type="button" class="btn-primary" id="aboutModalClose">Close</button>
+    </div>
+  </section>
+
+  <section class="modal" id="confirmModal" aria-hidden="true">
+    <div class="modal-backdrop" id="confirmModalBackdrop"></div>
+    <div class="modal-content">
+      <p class="confirm-message" id="confirmMessage">Are you sure?</p>
+      <div class="confirm-actions">
+        <button type="button" class="btn-secondary" id="confirmCancel">Cancel</button>
+        <button type="button" class="btn-danger" id="confirmOk">Delete</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
