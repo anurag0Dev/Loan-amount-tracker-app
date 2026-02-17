@@ -28,7 +28,8 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-  background: var(--bg);
+  /* background: var(--bg); */
+  background: black;
   color: var(--text);
   min-height: 100vh;
   -webkit-tap-highlight-color: transparent;
